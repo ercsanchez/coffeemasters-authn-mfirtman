@@ -8,14 +8,14 @@ const Router = {
                 const href = event.target.getAttribute("href");
                 Router.go(href);
             });
-        });  
+        });
         // It listen for history changes
         window.addEventListener('popstate',  event => {
             Router.go(event.state.route, false);
         });
-        // Process initial URL   
+        // Process initial URL
         Router.go(location.pathname);
-    },    
+    },
     go: (route, addToHistory=true) => {
         if (addToHistory) {
             history.pushState({ route }, '', route);
@@ -27,12 +27,12 @@ const Router = {
                 document.querySelector("section#home").style.display = "block";
                 break;
             case "/login":
-                Auth.init();                
+                Auth.init();
                 document.querySelector("section#login").style.display = "block";
-                break;                
+                break;
             case "/register":
                 document.querySelector("section#register").style.display = "block";
-                break;                
+                break;
             case "/account":
                 if (Auth.isLoggedIn) {
                     document.querySelector("section#account").style.display = "block";
@@ -40,8 +40,8 @@ const Router = {
                     Router.go("/login");
                 }
                 break;
-            default:                
-                break;   
+            default:
+                break;
         }
         window.scrollX = 0;
     }
