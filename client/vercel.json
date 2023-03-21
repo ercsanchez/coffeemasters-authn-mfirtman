@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "http://coffeemasters-api.jurni.cc/api/:path*"
+    },
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
