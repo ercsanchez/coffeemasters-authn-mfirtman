@@ -8,6 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
     "dev": "concurrently 'nodemon api.js' 'npm run dev --prefix ./client'",
+    "preview": "concurrently 'docker compose -f docker-compose.stage.yml up -d --build' 'npm run build --prefix ./client && npm run preview --prefix ./client'",
+    "preview:down": "docker compose -f docker-compose.stage.yml down",
     "format": "prettier '**/*.{js,jsx,ts,tsx,md}' --cache --write"
   },
   "author": "",
