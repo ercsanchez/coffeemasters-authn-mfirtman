@@ -12,6 +12,8 @@ function App() {
         <br />
         <a href="/about">About</a>
         <br />
+        <a href="/api/users">Get All Users</a>
+        <br />
         <a href="/api/test">Test API route</a>
         <Routes>
           <Route path="/about" element={<About />} />
