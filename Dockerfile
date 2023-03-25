@@ -6,13 +6,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends dumb-init
 WORKDIR '/app/api'
 
 # script is for initializing the empty postgres dev db, using prisma
-# COPY --link --chown=node:node ./scripts/init_postgres_dev.sh .
+COPY --link --chown=node:node ./scripts/init_postgres_dev.sh .
 # make file executable
-# RUN chmod u+x ./init_postgres_dev.sh
+RUN chmod u+x ./init_postgres_dev.sh
 
 COPY --link --chown=node:node . .
 RUN rm -rf './client'
 RUN npm ci --only=production
+RUN chown -R node:node node_modules
 USER node
 EXPOSE 5000
 
