@@ -18,4 +18,4 @@ USER node
 EXPOSE 5000
 
 # dumb-init will be set as process 0 as node doesn't behave well if it is process 0
-CMD ["dumb-init", "node", "api.js"]
+CMD ["dumb-init", "node", "src/api.js"]

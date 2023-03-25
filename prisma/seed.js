@@ -1,4 +1,4 @@
-import prisma from '../services/db.js';
+import prisma from '../src/services/db.js';
 
 async function main() {
   // ... you will write your Prisma Client queries here

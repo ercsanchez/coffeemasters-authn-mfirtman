@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "api.js",
+  "main": "src/api.js",
   "prisma": {
     "seed": "node prisma/seed.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "api": "nodemon api.js",
+    "api": "nodemon ./src/api.js",
     "client": "npm run dev --prefix ./client",
     "db": "docker compose -f docker-compose.dev.yml up -d --build",
     "db:reset": "prisma migrate reset --force",

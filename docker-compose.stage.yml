@@ -20,4 +20,4 @@ services:
       - DATABASE_URL=postgresql://postgres:postgres_password@postgres:5432/postgres?schema=public
     ports:
       - '80:5000'
-    command: sh -c './init_postgres_dev.sh && exec dumb-init node api.js'
+    command: sh -c './init_postgres_dev.sh && exec dumb-init node src/api.js'
