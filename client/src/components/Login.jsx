@@ -4,9 +4,20 @@ const Login = () => {
       <h2>Log In</h2>
       <form id="formLogin">
         <fieldset>
-          <input placeholder="email" id="login_email" required />
+          <label htmlFor="login_email">Your email</label>
+          <input
+            id="login_email"
+            placeholder="email"
+            required
+            autocomplete="username"
+          />
           <label htmlFor="login_password">Password</label>
-          <input type="password" id="login_password" />
+          <input
+            type="password"
+            id="login_password"
+            required
+            autocomplete="current-password"
+          />
         </fieldset>
         <button>Continue</button>
         <p>

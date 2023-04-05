@@ -4,15 +4,23 @@ const Register = () => {
       <h2>Register</h2>
       <form id="formRegister">
         <fieldset>
-          <input placeholder="You Name" id="register_name" required />
+          <label htmlFor="register_name">Your Name</label>
+          <input id="register_name" required autocomplete="name" />
+          <label htmlFor="register_email">Your Email</label>
           <input
-            placeholder="Your email"
             id="register_email"
+            placeholder="Your email"
             required
             type="email"
+            autocomplete="username"
           />
-          <label>Your Password</label>
-          <input type="password" id="register_password" required />
+          <label htmlFor="register_password">Your Password</label>
+          <input
+            type="password"
+            id="register_password"
+            required
+            autocomplete="new-password"
+          />
         </fieldset>
         <button>Register Account</button>
       </form>
