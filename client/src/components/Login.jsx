@@ -9,14 +9,14 @@ const Login = () => {
             id="login_email"
             placeholder="email"
             required
-            autocomplete="username"
+            autoComplete="username"
           />
           <label htmlFor="login_password">Password</label>
           <input
             type="password"
             id="login_password"
             required
-            autocomplete="current-password"
+            autoComplete="current-password"
           />
         </fieldset>
         <button>Continue</button>
