@@ -11,10 +11,26 @@ router.post('/auth/register', async (req, res) => {
     email: req.body.email,
     password: req.body.password,
   };
-  const userFound = await prisma.user.findUniqueOrThrow({
+  console.log('user======>', user);
+
+  const userFound = await prisma.user.findUnique({
     where: { email: user.email },
   });
+
+  if (!userFound) {
+    const result = await prisma.user.create({ data: user });
+    console.log('result===>', result);
+    res.json({ message: 'user registered...' });
+  }
+
   console.log('userFound=====>', userFound);
+  res.json({ message: 'email already exists...' });
+
+  // if (userFound) {
+  //   // res.send({ ok: true });
+  //   return res.json({ message: 'successfully registered...' });
+  //   // return;
+  // }
 });
 
 router.get('/users', async (req, res) => {
